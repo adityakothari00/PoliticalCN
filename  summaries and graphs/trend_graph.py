@@ -12,6 +12,15 @@ plt.scatter(x, y, label="Data")
 
 m, b = np.polyfit(x, y, 1)
 plt.plot(x, m * x + b, color="red", label="Line of best fit")
+plt.text(
+	0.05,
+	0.95,
+	f"Slope: {m:.6f}",
+	transform=plt.gca().transAxes,
+	ha="left",
+	va="top",
+	bbox={"facecolor": "white", "alpha": 0.8, "edgecolor": "gray"},
+)
 
 plt.xlabel("Congress")
 plt.ylabel("Fraction of balanced PNN triangles")
